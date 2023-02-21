@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-java-springboot-basic-jcad
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-java-springboot-basic-jcad
+    app.kubernetes.io/part-of: e2e-springboot
+  name: devfile-sample-java-springboot-basic-jcad
+  namespace: e2e-demos-qjdw-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: devfile-sample-java-springboot-basic-jcad
+    weight: null
+status: {}
